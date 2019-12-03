@@ -4,10 +4,10 @@
       .side-header__top-item__user-name
         GASSY
       .side-header__top-item__icons
-        .side-header__top-item__icons--setting-btn
-          set
-        .side-header__top-item__icons--edit-btn
-          edit
+        = link_to "#", class: "side-header__top-item__edit" do
+          = icon('fas', 'edit',class: "side-header__top-item__icons__edit--btn")
+        = link_to "#", class: "side-header__top-item__icons__setting" do
+          = icon('fas', 'cog',class: "side-header__top-item__icons__setting--btn")
   .group-list
     .group-list__group-name
     .group-list__new-message
