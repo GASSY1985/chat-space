@@ -33,5 +33,27 @@
   .group-list{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
+    .group{
+      margin: 0 20px;
+      &__group-name{
+        font-size: 15px;
+        padding-top: 20px;
+      }
+      &__new-messeage{
+        font-size: 11px;
+        padding: 5px 0 40px 0;
+      }
+    }
+    .group2{
+      margin: 0 20px;
+      &__group-name{
+        font-size: 15px;
+        padding-top: 20px;
+      }
+      &__new-messeage{
+        font-size: 11px;
+        padding: 5px 0 40px 0;
+      }
+    }
   }
 }
