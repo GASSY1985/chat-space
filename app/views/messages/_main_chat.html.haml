@@ -25,6 +25,8 @@
         Too sleepy!!
   .form
     .input-form
-      .input-form__input-box
-      .input-form__edit-img
-    .submit
+      %input.input-form__input-box{:type => "text", :placeholder => "type a message"}  
+        %label{class: "input-form__input-box__edit-img"}
+          =icon('fas', 'image', class: "input-form__input-box__edit-img--btn")
+          %input{type: "file", class: "input-form__input-box__edit-img--file"}
+    %input.form.submit{:type => "submit" ,:value => "Send"}
