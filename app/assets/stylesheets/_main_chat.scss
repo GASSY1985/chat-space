@@ -1,11 +1,11 @@
 .chat-main{
   width: calc(100vw - 300px);
   height: 100vh;
-  background-color: #ffffff;
+  background-color: $white;
   float: left;
   .main-header{
     height: 100px;
-    background-color: #ffffff;
+    background-color: $white;
     border-bottom-color: #eeeeee;
     padding: 0 40px;
     display: flex;
@@ -13,11 +13,11 @@
     &__group-info{
       padding-top: 35px;
       &__group-name{
-        color: #333333;
+        color: $dark_gray;
         font-size: 20px;
       }
       &__member-list{
-        color: #999999;
+        color: $light_gray;
         font-size: 12px;
         padding: 15px 0 0 0;
       }
@@ -26,11 +26,11 @@
       margin-top: 28px;
       height: 40px;
       padding: 0 20px;
-      border:solid 1px #38aef0;
+      border:solid 1px $light_blue;
       display: inline-block;
       a {
       text-decoration: none;
-      color: #38aef0;
+      color: $light_blue;
       line-height: 40px;
       }
     }
@@ -43,36 +43,35 @@
       padding: 0 40px;
       &__user-name{
         font-size: 16px;
-        color: #333333;
+        color: $dark_gray;
         display: flex;
         &__date{
           font-size: 12px;
-          color: #434A54;
+          color: $black;
           padding: 0 0 0 12px;
         }
       }
       &__message{
         font-size: 14px;
-        color: #434A54;
+        color: $black;
         padding: 12px 0 0 0;
         padding-bottom: 46px;
       }
     }
-        .messages{
+    .messages{
       padding: 0 40px;
       &__user-name{
         font-size: 16px;
-        color: #333333;
+        color: $dark_gray;
         display: flex;
         &__date{
           font-size: 12px;
-          color: #434A54;
           padding: 0 0 0 12px;
         }
       }
       &__message{
         font-size: 14px;
-        color: #434A54;
+        color: $black;
         padding: 12px 0 0 0;
         padding-bottom: 46px;
       }
@@ -81,7 +80,7 @@
       padding: 0 40px;
       &__user-name{
         font-size: 16px;
-        color: #333333;
+        color: $dark_gray;
         display: flex;
         &__date{
           font-size: 12px;
@@ -91,7 +90,7 @@
       }
       &__message{
         font-size: 14px;
-        color: #434A54;
+        color: $black;
         padding: 12px 0 0 0;
         padding-bottom: 46px;
       }
@@ -106,7 +105,7 @@
     .input-form{
       width: 100%;
       height: 50px;
-      background-color: #ffffff;
+      background-color: $white;
       position: relative;
       &__input-box{
         padding: 0 10px;
@@ -128,8 +127,8 @@
     .submit{
       height: 50px;
       margin: 0 0 0 15px;
-      background-color: #38aef0;
-      border:solid 1px #38aef0;
+      background-color: $light_blue;
+      border:solid 1px $light_blue;
       color: #ffffff;
     }
   }
