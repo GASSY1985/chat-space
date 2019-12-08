@@ -4,19 +4,15 @@
       .side-header__top-item__user-name
         = current_user.name
       .side-header__top-item__icons
-        = link_to "#", class: "side-header__top-item__edit" do
+        = link_to new_group_path, class: "side-header__top-item__edit" do
           = icon('fas', 'edit',class: "side-header__top-item__icons__edit--btn")
         = link_to edit_user_path(current_user), class: "side-header__top-item__icons__setting" do
           = icon('fas', 'cog',class: "side-header__top-item__icons__setting--btn")
-  .group-list
-    .group
-      .group__group-name
-        gassys
-      .group__new-message
-        no message
-
-    .group2
-      .group__group-name
-        gassys2
-      .group__new-message
-        no message2
+  .groups
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group) do
+          .group__name
+            = group.name
+          .group__message
+            新着メッセージはありません
