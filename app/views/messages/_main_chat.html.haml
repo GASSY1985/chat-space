@@ -2,27 +2,18 @@
   .main-header
     .main-header__group-info
       .main-header__group-info__group-name
-        gassys
+        = @group.name
       .main-header__group-info__member-list
-        member : gassy gagagassy
+        member : 
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .main-header__edit-btn
-      =link_to "#" do
+      = link_to "edit_group_path(current_user)" do
         Edit
   .chat-room
     .messages
-      .messages__user-name
-        gassy
-        .messages__user-name__date
-          2019/12/04(tue) 24:40:40
-      .messages__message
-        This is SECOND TRY!!
-    .messages2
-      .messages2__user-name
-        gassy2
-        .messages2__user-name__date
-          2019/12/04(tue) 25:10:00
-      .messages2__message
-        Too sleepy!!
+      =render @messages
+
   .form
     = form_for [@group, @message] do |f|
       = f.text_field :content,class: 'input-message', placeholder: "type a message"
