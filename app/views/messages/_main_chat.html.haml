@@ -2,7 +2,7 @@
   .main-header
     .main-header__group-info
       .main-header__group-info__group-name
-        = @group.name
+        = @group.group_users.user.name
       .main-header__group-info__member-list
         member : 
         - @group.group_users.each do |group_user|
