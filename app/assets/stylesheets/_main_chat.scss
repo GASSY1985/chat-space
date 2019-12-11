@@ -58,78 +58,44 @@
         padding-bottom: 46px;
       }
     }
-    .messages{
-      padding: 0 40px;
-      &__user-name{
-        font-size: 16px;
-        color: $dark_gray;
-        display: flex;
-        &__date{
-          font-size: 12px;
-          padding: 0 0 0 12px;
-        }
-      }
-      &__message{
-        font-size: 14px;
-        color: $black;
-        padding: 12px 0 0 0;
-        padding-bottom: 46px;
-      }
-    }
-    .messages2{
-      padding: 0 40px;
-      &__user-name{
-        font-size: 16px;
-        color: $dark_gray;
-        display: flex;
-        &__date{
-          font-size: 12px;
-          color: #434A54;
-          padding: 0 0 0 12px;
-        }
-      }
-      &__message{
-        font-size: 14px;
-        color: $black;
-        padding: 12px 0 0 0;
-        padding-bottom: 46px;
-      }
-    }
   }
   .form{
     height: 90px;
     background-color: #d2d2d2;
-    display: flex;
     align-items: center;
     padding: 0 40px;
+    display: flex;
     .new_message{
+      display: flex;
       width: 100%;
       height: 50px;
       background-color: $white;
-      position: relative;
       .input-message{
         padding: 0 10px;
         width: 100%;
         height: 100%;
-        &__edit__img{
+        position: relative;
+      }
+      .edit{
+        &__img{
           position: absolute;
           right: 10px;
           i{
             font-size: 20px;
             line-height: 50px;
           }
-          &--file{
+          &__file{
             display: none;
           }
         }
       }
-    }
-    .submit{
-      height: 50px;
-      margin: 0 0 0 15px;
-      background-color: $light_blue;
-      border:solid 1px $light_blue;
-      color: #ffffff;
+      .submit{
+        height: 50px;
+        margin: 0 0 0 15px;
+        background-color: $light_blue;
+        border:solid 1px $light_blue;
+        color: #ffffff;
+      }
     }
   }
 }
