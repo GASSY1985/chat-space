@@ -2,31 +2,22 @@
   .main-header
     .main-header__group-info
       .main-header__group-info__group-name
-        gassys
+        = @group.name
       .main-header__group-info__member-list
-        member : gassy gagagassy
+        member : 
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
     .main-header__edit-btn
-      =link_to "#" do
-        Edit
+      = link_to "Edit", edit_group_path(@group)
   .chat-room
     .messages
-      .messages__user-name
-        gassy
-        .messages__user-name__date
-          2019/12/04(tue) 24:40:40
-      .messages__message
-        This is SECOND TRY!!
-    .messages2
-      .messages2__user-name
-        gassy2
-        .messages2__user-name__date
-          2019/12/04(tue) 25:10:00
-      .messages2__message
-        Too sleepy!!
+      = render @messages
+
   .form
-    .input-form
-      %input.input-form__input-box{type: "text", placeholder: "type a message"}  
-        %label{class: "input-form__input-box__edit-img"}
-          =icon('fas', 'image', class: "input-form__input-box__edit-img--btn")
-          %input{type: "file", class: "input-form__input-box__edit-img--file"}
-    %input.form.submit{:type => "submit" ,:value => "Send"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-message', placeholder: "type a message"
+      .edit 
+        = f.label :image, class: 'edit__img' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'edit__img__file'
+      = f.submit 'Send', class: 'submit'
