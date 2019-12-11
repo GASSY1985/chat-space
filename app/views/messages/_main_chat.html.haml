@@ -2,21 +2,20 @@
   .main-header
     .main-header__group-info
       .main-header__group-info__group-name
-        = @group.group_users.user.name
+        = @group.name
       .main-header__group-info__member-list
         member : 
         - @group.group_users.each do |group_user|
           = group_user.user.name
     .main-header__edit-btn
-      = link_to "edit_group_path(current_user)" do
-        Edit
+      = link_to "Edit", edit_group_path(@group)
   .chat-room
     .messages
-      =render @messages
+      = render @messages
 
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content,class: 'input-message', placeholder: "type a message"
+      = f.text_field :content, class: 'input-message', placeholder: "type a message"
       .edit 
         = f.label :image, class: 'edit__img' do
           = icon('fas', 'image', class: 'icon')
