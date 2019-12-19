@@ -3,7 +3,7 @@ $(function(){
     if (message.image == null){
       var html = $(html).append(`</li>`)
     } else {
-      var html = $$(html).append(`<div class = 'hoge'><img src = '${data.image.url}' width="256" height="256"}</div></li>`)
+      var html = $$(html).append(`<div class = 'messages'><img src = '${data.image}' width="56" height="56"}</div></li>`)
     }
     return html;
   }
