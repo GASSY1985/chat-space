@@ -3,7 +3,8 @@ $(function(){
     if (message.image == null){
       var html = $(html).append(`</li>`)
     } else {
-      var html = $$(html).append(`<div class = 'messages'><img src = '${data.image}' width="56" height="56"}</div></li>`)
+      var html = $(html).append(`<div class = 'messages'><img src = '${message.image}'}</div></li>`)
+      console.log("good!")
     }
     return html;
   }
@@ -22,6 +23,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight });
       $('.textbox').val('');
       $('.form__submit').prop('disabled', false);
     })
