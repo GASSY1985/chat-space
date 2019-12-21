@@ -39,23 +39,26 @@
     height: calc(100vh - 190px);
     background-color: #fafafa;
     padding-top: 35px;
+    overflow: scroll;
     .messages{
       padding: 0 40px;
-      &__user-name{
-        font-size: 16px;
-        color: $dark_gray;
-        display: flex;
-        &__date{
-          font-size: 12px;
-          color: $light_gray;
-          padding: 0 0 0 12px;
+      .message{
+        &__user-name{
+          font-size: 16px;
+          color: $dark_gray;
+          display: flex;
+          &__date{
+            font-size: 12px;
+            color: $light_gray;
+            padding: 0 0 0 12px;
+          }
         }
-      }
-      &__message{
-        font-size: 14px;
-        color: $black;
-        padding: 12px 0 0 0;
-        padding-bottom: 46px;
+        &__message{
+          font-size: 14px;
+          color: $black;
+          padding: 12px 0 0 0;
+          padding-bottom: 46px;
+        }
       }
     }
   }

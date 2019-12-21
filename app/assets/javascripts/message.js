@@ -1,31 +1,54 @@
 $(function(){
   function buildHTML(message){
     if (message.image == null){
-      var html = $(html).append(`</li>`)
-    } else {
-      var html = $(html).append(`<div class = 'messages'><img src = '${message.image}'}</div></li>`)
-      console.log("good!")
-    }
+      var html =
+      `<div class = "message" data-message-id = ${message.id}>
+        <div class = "message__user-name">${message.user_name}
+          <div class = "message__user-name__date">${message.date}</div>
+        </div>
+        <div class = "message__message">
+          <p class = "lower-message__content">${message.content}</p>
+        </div>
+      </div>`
     return html;
-  }
-  $('.new_message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      var html = buildHTML(data);
-      $('.messages').append(html);
-      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight });
-      $('.textbox').val('');
-      $('.form__submit').prop('disabled', false);
-    })
-  });
+    } else {
+      var html =
+      `<div class = "message" data-message-id = ${message.id}>
+        <div class = "message__user-name">${message.user_name}
+          <div class = "message__user-name__date">${message.date}</div>
+        </div>
+        <div class = "message__message">
+          <p class = "lower-message__content">${message.content}</p>
+        </div>
+        <img src = ${message.image}}
+      </div>`
+    }
+  return html;
+  };
+$('.new_message').on('submit', function(e){
+  e.preventDefault();
+  var formData = new FormData(this);
+  var url = $(this).attr('action')
+  $.ajax({
+    url: url,
+    type: 'POST',
+    data: formData,
+    dataType: 'json',
+    processData: false,
+    contentType: false
+  })
+  .done(function(data){
+    var html = buildHTML(data);
+    $('.messages').append(html);
+    $('.chat-room').animate({ scrollTop: $('.chat-room')[0].scrollHeight });
+    $('form')[0].reset();
+    $('.textbox').val('');
+  })
+  .fail(function(data){
+    alert("メッセージ送信に失敗しました");
+  })
+  .always(function(data){
+    $('.submit').prop('disabled', false);
+  })
+});
 });
