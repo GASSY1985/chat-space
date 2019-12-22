@@ -42,7 +42,6 @@ $('.new_message').on('submit', function(e){
     $('.messages').append(html);
     $('.chat-room').animate({ scrollTop: $('.chat-room')[0].scrollHeight });
     $('form')[0].reset();
-    $('.textbox').val('');
   })
   .fail(function(data){
     alert("メッセージ送信に失敗しました");
