@@ -30,21 +30,22 @@ $(function(){
   $("#user-search-field").on("keyup", function(){
     let input = $("#user-search-field").val();
     $.ajax({
-      url: '/users',
-      type: 'GET',
+      url: "/users",
+      type: "GET",
       data: { keyword: input },
-      processData: false,
-      contentType: false,
-      dataType: 'json'
+      // processData: false,
+      // contentType: false,
+      dataType: "json"
     })
       .done(function(users){
+        console.log(users);
         $("#user-search-result").empty();
 
         if (users.length !== 0) {
           users.forEach(function(user){
             addUser(user);
           });
-        } else if (input,length == 0) {
+        } else if (input.length == 0) {
           return false;
         } else {
           addNoUser();
