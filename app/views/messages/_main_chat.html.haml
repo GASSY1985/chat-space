@@ -15,9 +15,10 @@
 
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'input-message', placeholder: "type a message"
-      .edit 
-        = f.label :image, class: 'edit__img' do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'edit__img__file'
+      .input_box
+        = f.text_field :content, class: 'input-message', placeholder: "type a message"
+        .edit 
+          = f.label :image, class: 'edit__img' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'edit__img__file'
       = f.submit 'Send', class: 'submit'
